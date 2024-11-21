@@ -6,19 +6,19 @@ const profiles = [
     name: "Arjun Gupta",
     description:
       "I’m a third-year Computer Applications student with a strong passion for Full Stack Development. I specialize in turning creative ideas into dynamic web experiences, balancing both design and performance. Beyond coding, I’m an enthusiastic and quick learner with a strong drive to continuously enhance my skills.",
-    imgSrc: "./src/Components/AboutMe/Myself/arjun.png",
+    imgSrc: "./images/myself/arjun.png",
   },
   {
     name: "Ansh Bansal",
     description:
       "I’m a third-year Computer Applications student with a strong passion for Full Stack Development. I specialize in turning creative ideas into dynamic web experiences, balancing both design and performance. Beyond coding, I’m an enthusiastic and quick learner with a strong drive to continuously enhance my skills.",
-    imgSrc: "./src/Components/AboutMe/Myself/ansh.jpeg",
+    imgSrc: "./images/myself/ansh.jpeg",
   },
   {
     name: "Adarsh Sharma",
     description:
       "I’m a third-year Computer Applications student with a strong passion for Full Stack Development. I specialize in turning creative ideas into dynamic web experiences, balancing both design and performance. Beyond coding, I’m an enthusiastic and quick learner with a strong drive to continuously enhance my skills.",
-    imgSrc: "./src/Components/AboutMe/Myself/adarsh.jpg",
+    imgSrc: "./images/myself/adarsh.jpg",
   },
 ];
 
@@ -41,8 +41,8 @@ function Myself() {
   }, []);
 
   return (
-    <div id="content-container" className="outer">
-      <section className="myself-container">
+    <div id="content-container" className="outer h-3/4">
+      <section className="myself-container mt-40 w-3/4 bg-gray-400 backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100">
         <img
           src={profiles[currentIndex].imgSrc}
           alt={profiles[currentIndex].name}

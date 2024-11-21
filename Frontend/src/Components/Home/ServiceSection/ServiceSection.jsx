@@ -5,8 +5,12 @@ import {
   CreditCardIcon,
   GiftIcon,
 } from "@heroicons/react/24/outline";
-
+import { useNavigate } from "react-router-dom";
 const ServicesSection = () => {
+  const redirecting = useNavigate();
+  const redirect = () => {
+    redirecting("/contact-us");
+  };
   return (
     <div className="flex flex-col justify-center items-center  font-WorkSans my-20">
       <div className="max-w-6xl w-full mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -22,13 +26,16 @@ const ServicesSection = () => {
             offer exceptional services, blending culinary artistry with warm
             hospitality.
           </p>
-          <button className="bg-green-500 transition-all duration-300 hover:bg-olive text-white font-bold py-2 px-4 rounded-full w-32">
-            Explore
+          <button
+            onClick={redirect}
+            className="bg-green-500 max-md:self-center transition-all duration-300 hover:bg-olive text-lg text-white font-bold py-2 px-4 rounded-full w-40"
+          >
+            Contact-us
           </button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
+          <div className="backdrop-filter backdrop-blur-md bg-opacity-15 border border-gray-100 bg-gray-300 p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
             <ShoppingCartIcon className="w-12 h-12 text-green-500 mb-4" />
             <h4 className="font-bold text-lg text-gray-900 mb-2">Catering</h4>
             <p className="text-gray-600 text-center">
@@ -36,7 +43,7 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
+          <div className="backdrop-filter backdrop-blur-md bg-opacity-15 border border-gray-100 bg-gray-300 p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
             <TruckIcon className="w-12 h-12 text-green-500 mb-4" />
             <h4 className="font-bold text-lg text-gray-900 mb-2">
               Fast Delivery
@@ -46,7 +53,7 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
+          <div className="backdrop-filter backdrop-blur-md bg-opacity-15 border border-gray-100 bg-gray-300 p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
             <CreditCardIcon className="w-12 h-12 text-green-500 mb-4" />
             <h4 className="font-bold text-lg text-gray-900 mb-2">
               Online Ordering
@@ -56,7 +63,7 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
+          <div className="backdrop-filter backdrop-blur-md bg-opacity-15 border border-gray-100 bg-gray-300 p-6 rounded-xl shadow-lg flex flex-col items-center hover:scale-105 transition-all ease-in-out">
             <GiftIcon className="w-12 h-12 text-green-500 mb-4" />
             <h4 className="font-bold text-lg text-gray-900 mb-2">Gift Cards</h4>
             <p className="text-gray-600 text-center">
