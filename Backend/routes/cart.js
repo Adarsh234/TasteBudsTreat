@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const Menu = require("../Models/Menu.js");
 const Cart = require("../Models/Cart.js");
 
 // For adding multiple dishish in a cart
@@ -63,6 +62,28 @@ router.delete("/delete", async (req, res) => {
     res
       .status(500)
       .json({ message: "An error occurred while deleting the dish" });
+  }
+});
+router.delete("/clear", async (req, res) => {
+  try {
+    const Username = req.headers.username;
+
+    if (!Username) {
+      return res.status(400).json({ message: "Username is required" });
+    }
+
+    const result = await Cart.deleteMany({ Username });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: "No cart items found to delete" });
+    }
+
+    res
+      .status(200)
+      .json({ success: true, message: "Cart cleared successfully" });
+  } catch (error) {
+    console.error("Error clearing cart:", error);
+    res.status(500).json({ success: false, message: "Failed to clear cart" });
   }
 });
 
